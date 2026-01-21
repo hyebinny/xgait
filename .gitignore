@@ -1,0 +1,14 @@
+# ignore dataset folder
+dataset/ 
+
+# ignore imgs, json, ckpts
+*.png
+*.jpg
+*.jpeg
+*.pth
+*.pt
+*.txt
+*.yaml
+
+# ignore external repo
+labelImg
