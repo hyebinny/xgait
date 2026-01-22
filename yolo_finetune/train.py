@@ -29,7 +29,7 @@ def main():
     args = parse_args()
 
     # Load pretrained model
-    model = YOLO("xgait/yolo_finetune/yolo11n.pt")
+    model = YOLO("yolo_finetune/yolo11n.pt")
 
     # Train
     results = model.train(

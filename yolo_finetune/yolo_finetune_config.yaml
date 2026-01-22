@@ -1,7 +1,7 @@
 # Train/val/test sets
-path: yolo_finetune/datasets/labelImg_data # dataset root dir
+path: yolo_finetune/labelImg_data # dataset root dir
 train: images/train # train images (relative to 'path')
-val: images/val
+val: images/test
 test: images/test 
 
 # Classes

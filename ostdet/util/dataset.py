@@ -1,4 +1,5 @@
 import os
+import json
 from pathlib import Path
 from typing import List, Dict, Tuple
 
@@ -135,13 +136,17 @@ class GNU_Dataset(Dataset):
     For 3-class:
       IMPLANT -> implant
     """
-    def __init__(self, root: str, num_class: int, ost_json: str, implant_negative_json: str,
-                 use_knee: bool, transform=None, class_names=None):
+    def __init__(self, root, num_class, ost_json, implant_negative_json,
+                 use_knee, split, split_json, transform=None, class_names=None,):
         self.root = root
         self.num_class = num_class
         self.use_knee = use_knee
         self.transform = transform
         self.class_names = class_names
+
+        self.split = split
+        self.split_json = split_json
+        self.allowed_subjects = self._load_allowed_subjects()
 
         ost = load_gnu_ost_json(ost_json)
         self.pos_set = set(ost["POSITIVE"])
@@ -157,6 +162,12 @@ class GNU_Dataset(Dataset):
         self.labels = [y for _, y in self.samples]
         self.class_to_indices = self._make_class_to_indices(self.labels, num_class)
 
+    def _load_allowed_subjects(self):
+        with open(self.split_json, "r") as f:
+            sp = json.load(f)
+        key = "TRAIN_SET" if self.split == "train" else "TEST_SET"
+        return set(sp[key])
+
     def _make_class_to_indices(self, labels, C):
         d = {c: [] for c in range(C)}
         for i, y in enumerate(labels):
@@ -168,6 +179,10 @@ class GNU_Dataset(Dataset):
         for subj in sorted(Path(self.root).iterdir()):
             if not subj.is_dir():
                 continue
+
+            if subj.name not in self.allowed_subjects:
+                continue
+
             knee_dir = subj / "knee"
             if knee_dir.is_dir():
                 for p in sorted(knee_dir.glob("*")):
@@ -180,6 +195,10 @@ class GNU_Dataset(Dataset):
         for subj in sorted(Path(self.root).iterdir()):
             if not subj.is_dir():
                 continue
+
+            if subj.name not in self.allowed_subjects:
+                continue
+
             xray_dir = subj / "xray"
             if xray_dir.is_dir():
                 for p in sorted(xray_dir.glob("*")):
@@ -271,6 +290,8 @@ def build_dataset(cfg: dict, split: str):
                     use_knee=bool(gnu_cfg.get("use_knee", True)),
                     transform=tf,
                     class_names=class_names,
+                    split=split,
+                    split_json=gnu_cfg.get("split_json", "dataset/GNU_json/GNU_split.json"),
                 )
             )
         else:

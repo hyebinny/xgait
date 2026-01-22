@@ -16,44 +16,46 @@ data:
     datasets: ["oai", "gnu"] # ["oai", "gnu"]
 
     oai:
-      root: /mnt/d/xgait/dataset/OAI/train
-      implant_negative_json: /mnt/d/xgait/dataset/OAI_json/OAI_train_implant.json
+      root: dataset/OAI/train
+      implant_negative_json: dataset/OAI_json/OAI_train_implant.json
 
     gnu:
-      root: /mnt/d/xgait/dataset/GNU
-      ost_json: /mnt/d/xgait/dataset/GNU_ost.json
-      implant_negative_json: /mnt/d/xgait/dataset/GNU_json/GNU_train_implant.json
+      root: dataset/GNU
+      split_json: dataset/GNU_json/GNU_split.json
+      ost_json: dataset/GNU_json/GNU_ost.json
+      implant_negative_json: dataset/GNU_json/GNU_train_implant.json
       use_knee: true
 
   test:
-    datasets: ["oai"] # ["oai", "gnu"]
+    datasets: ["gnu"] # ["oai", "gnu"]
 
     oai:
-      root: /mnt/d/xgait/dataset/OAI/test
-      implant_negative_json: /mnt/d/xgait/dataset/OAI_json/OAI_test_implant.json
+      root: dataset/OAI/test
+      implant_negative_json: dataset/OAI_json/OAI_test_implant.json
 
     gnu:
-      root: /mnt/d/xgait/dataset/GNU
-      ost_json: /mnt/d/xgait/dataset/GNU_json/GNU_ost.json
-      implant_negative_json: /mnt/d/xgait/dataset/GNU_json/GNU_test_implant.json
+      root: dataset/GNU
+      split_json: dataset/GNU_json/GNU_split.json
+      ost_json: dataset/GNU_json/GNU_ost.json
+      implant_negative_json: dataset/GNU_json/GNU_test_implant.json
       use_knee: true
 
 train:
-  out_dir: /mnt/d/xgait/ostdet/output/ostdet_3_class
-  epochs: 200
-  log_epoch: 5
-  eval_freq: 10
-  save_epoch: 50
+  out_dir: ostdet/output/ostdet_3_class
+  epochs: 10
+  log_epoch: 1
+  eval_freq: 1
+  save_epoch: 1
   num_workers: 4
   fp16: true
 
   batch_sampler:
-    # enabled: true
-    # n_class: 3
-    # n_samples: 32
+    enabled: true
+    n_class: 3
+    n_samples: 32
 
-    enabled: false
-    batch_size: 64
+    # enabled: false
+    # batch_size: 64
 
 optim:
   name: adamw
@@ -61,7 +63,7 @@ optim:
   weight_decay: 1.0e-4
 
 model:
-  backbone: vit_base_patch16_224
+  backbone: vit_base_patch16_224 # [resnet50, efficientnet_b3, convnext_tiny, vit_base_patch16_224, vit_base_patch16_224, ... 등등 timm 지원 backbones]
   pretrained: true
   embed_dim: 256
 
