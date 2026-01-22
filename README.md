@@ -16,15 +16,13 @@ xgait/
 ```
 
 ## 🔥 To be added
-* Subject metadata xslx file
 * SNU dataset
 * xgait model and train/test code
-* requirements.txt file
 
 ## Activate virtual environment
 You can activate the preconfigured conda environment named `biohub`:
 ```bash
-conda activate biohub
+conda activate xgait
 ```
 
 Alternatively, you may create a new conda environment and install the required dependencies:
