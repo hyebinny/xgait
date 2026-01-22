@@ -40,7 +40,7 @@ Fine-tuning can be executed using the command below, and the training conditions
 cd xgait
 python yolo_finetune/train.py \
     --epochs 50 \
-    --output_pth output \
+    --output_pth yolo_finetune/output \
     --exp_name knee_yolo11n
 ```
 
@@ -53,7 +53,7 @@ To evaluate the trained model and compute detection metrics, run:
 python yolo_finetune/test.py \
     --yolo_pth [fine_tuned_yolo_pth].pt \
     --config_pth yolo_finetune/yolo_finetune_config.yaml \
-    --output_path yolo_finetune/output/eval \
+    --output_path yolo_finetune/output \
     --exp_name knee_yolo11n
 ```
 
