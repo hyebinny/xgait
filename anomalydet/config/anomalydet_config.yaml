@@ -13,19 +13,19 @@ data:
 
   train:
     gnu:
-      root: /mnt/d/xgait/dataset/GNU
-      align_json: /mnt/d/xgait/dataset/GNU_json/GNU_align.json
-      split_json: /mnt/d/xgait/dataset/GNU_json/GNU_split.json
+      root: dataset/GNU
+      align_json: dataset/GNU_json/GNU_align.json
+      split_json: dataset/GNU_json/GNU_split.json
 
   test:
     gnu:
-      root: /mnt/d/xgait/dataset/GNU
-      align_json: /mnt/d/xgait/dataset/GNU_json/GNU_align.json
-      split_json: /mnt/d/xgait/dataset/GNU_json/GNU_split.json
+      root: dataset/GNU
+      align_json: dataset/GNU_json/GNU_align.json
+      split_json: dataset/GNU_json/GNU_split.json
 
 
 train:
-  out_dir: /mnt/d/xgait/anomalydet/output/tri_all
+  out_dir: anomalydet/output/tri_all
   epochs: 100
   log_epoch: 5
   eval_freq: 10

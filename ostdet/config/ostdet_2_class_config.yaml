@@ -13,7 +13,7 @@ data:
     std:  [0.5, 0.5, 0.5]
 
   train:
-    datasets: ["oai", "gnu"] # ["oai", "gnu"]
+    datasets: ["gnu"] # ["oai", "gnu"]
 
     oai:
       root: /mnt/d/xgait/dataset/OAI/train
@@ -33,9 +33,9 @@ data:
       implant_negative_json: /mnt/d/xgait/dataset/OAI_json/OAI_test_implant.json
 
     gnu:
-      root: /mnt/d/xgait/dataset/GNU
-      ost_json: /mnt/d/xgait/dataset/GNU_json/GNU_ost.json
-      implant_negative_json: /mnt/d/xgait/dataset/GNU_json/GNU_test_implant.json
+      root: dataset/GNU
+      ost_json: dataset/GNU_json/GNU_ost.json
+      implant_negative_json: dataset/GNU_json/GNU_test_implant.json
       use_knee: true
 
 train:

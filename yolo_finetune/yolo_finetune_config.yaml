@@ -1,8 +1,8 @@
 # Train/val/test sets
-path: /mnt/d/xgait/yolo_finetune/labelImg_data # dataset root dir
-train: images/train # train images (relative to 'path') 4 images
-val: images/test # optional
-test: images/test # test images (optional)
+path: yolo_finetune/datasets/labelImg_data # dataset root dir
+train: images/train # train images (relative to 'path')
+val: images/val
+test: images/test 
 
 # Classes
 names:

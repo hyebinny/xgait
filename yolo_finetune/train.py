@@ -13,7 +13,7 @@ def parse_args():
     parser.add_argument(
         "--output_pth",
         type=str,
-        default="/mnt/d/xgait/yolo_finetune/output",
+        default="yolo_finetune/output",
         help="Directory to save training outputs (project path)"
     )
     parser.add_argument(
@@ -29,11 +29,11 @@ def main():
     args = parse_args()
 
     # Load pretrained model
-    model = YOLO("/mnt/d/xgait/yolo_finetune/yolo11n.pt")
+    model = YOLO("xgait/yolo_finetune/yolo11n.pt")
 
     # Train
     results = model.train(
-        data="/mnt/d/xgait/yolo_finetune/yolo_finetune_config.yaml",
+        data="yolo_finetune/yolo_finetune_config.yaml",
         epochs=args.epochs,
         imgsz=640,
         project=args.output_pth,

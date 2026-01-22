@@ -15,7 +15,7 @@ def parse_args():
         "--config_pth",
         type=str,
         required=True,
-        default="/mnt/d/xgait/yolo_finetune/yolo_finetune_config.yaml",
+        default="yolo_finetune/yolo_finetune_config.yaml",
         help="Path to dataset yaml file"
     )
     parser.add_argument(
@@ -46,7 +46,7 @@ def parse_args():
     parser.add_argument(
         "--output_path",
         type=str,
-        default="/mnt/d/xgait/yolo_finetune/output/eval",
+        default="yolo_finetune/output/eval",
         help="Directory to save evaluation results"
     )
     parser.add_argument(

@@ -8,8 +8,8 @@ task:
 
 data:
   gnu:
-    root: /mnt/d/hyebin/xgait/dataset/GNU
-    split_json: /mnt/d/hyebin/xgait/dataset/GNU_json/GNU_split.json
+    root: dataset/GNU
+    split_json: dataset/GNU_json/GNU_split.json
     train_key: TRAIN_SET
     test_key: TEST_SET
 
@@ -37,14 +37,13 @@ data:
     scale_max: 1.05
 
 train:
-  out_dir: /mnt/d/hyebin/xgait/boneseg/output
-  # exp_name: gnu_attnunet_512
-  exp_name: test
+  out_dir: boneseg/output
+  exp_name: gnu_attnunet_512
   epochs: 200
-  batch_size: 16
+  batch_size: 1
   eval_freq: 50
   save_epoch: 50
-  log_epoch: 5
+  log_epoch: 1
   num_workers: 4
   fp16: true
 
@@ -63,7 +62,7 @@ loss:
   smooth: 0.00001
 
 test:
-  ckpt: /mnt/d/hyebin/xgait/boneseg/output/gnu_attnunet_512/ckpt/final.pth
+  ckpt: boneseg/output/gnu_attnunet_512/ckpt/final.pth
   save_pred: true
   pred_dir: ""        # 비워두면 out_dir/exp_name/preds 사용
   overlay_alpha: 0.35

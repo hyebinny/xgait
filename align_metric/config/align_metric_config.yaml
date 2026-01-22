@@ -10,14 +10,14 @@ data:
   dataset: ["gnu"]
 
   gnu:
-    root: /mnt/d/hyebin/xgait/dataset/GNU
-    split_json: /mnt/d/hyebin/xgait/dataset/GNU_json/GNU_split.json
+    root: dataset/GNU
+    split_json: dataset/GNU_json/GNU_split.json
     train_key: TRAIN_SET
     test_key: TEST_SET
 
   snu:
-    root: /mnt/d/hyebin/xgait/dataset/SNU
-    split_json: /mnt/d/hyebin/xgait/dataset/GNU_json/GNU_split.json
+    root: dataset/SNU
+    split_json: dataset/GNU_json/GNU_split.json
     train_key: TRAIN_SET
     test_key: TEST_SET
 
@@ -27,9 +27,9 @@ data:
     normalize: true
 
 test:
-  ckpt: /mnt/d/hyebin/xgait/boneseg/output/gnu_attnunet_512/ckpt/final.pth
+  ckpt: boneseg/output/gnu_attnunet_512/ckpt/final.pth
   save_pred: true
-  out_pth: /mnt/d/hyebin/xgait/align_metric/output
+  out_pth: align_metric/output
   overlay_alpha: 0.35
 
 visualize:
