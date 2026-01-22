@@ -60,6 +60,7 @@ def main(cfg_path: str, ckpt_path: str):
     m = evaluate(model, test_loader, device, num_class)
     logger.info(f"Checkpoint: {ckpt_path}")
     logger.info(f"class_names={class_names}")
+    logger.info(f"Test samples: {len(test_ds)}")
     logger.info("======= Test Metrics =======")
     logger.info(f"accuracy:  {m['acc']:.4f}")
     logger.info(f"precision: {m['precision']:.4f}")
