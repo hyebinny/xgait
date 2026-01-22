@@ -1,22 +1,27 @@
-골관절염 분류 모델
-2-class 혹은 3-class 지원.
+# Osteoarthritis Detection
 
-OAI 데이터셋의 경우
-2-class: positive / negative
-3-class: positive / negative / implant
-이때 2-class에서 implant 안의 pos / neg이 /mnt/d/xgait/dataset/OAI_test_implant.json, /mnt/d/xgait/dataset/OAI_train_implant.json에 분류되어 있음
+## Osteoarthritis Classification
+A pretrained backbone is loaded from `timm`, and the classification head is replaced to build and fine-tune an osteoarthritis classification model.  
+Both 2-class and 3-class settings are supported.  
+* 2-class: positive / negative
+* 3-class: positive / negative / implant
 
-GNU 데이터셋의 경우
-2-class: 
-3-class: 
+In the 2-class setting, implant samples may be treated as either positive or negative depending on the annotation.  
+The indices of implant samples labeled as negative are provided in:`dataset/[OAI/GNU]_[train/test]_implant.json`.
 
-train.py에는 config 파일 경로 넣어서 수행
-test.py에서는 acc, precision, recall, f1-score 출력되도록 해줌
-
-util.py에서는
-logging 관리, 데이터셋 생성, batch 생성, metric 계산 등의 함수가 있음
-
-
+### Train
+Training is performed according to the specified configuration file.  
+Training can be conducted on either OAI or GNU, or on both datasets.
+```bash
 python train.py --cfg_pth /mnt/d/xgait/ostdet/config/ostdet_2_class_config.yaml
+```
 
-python test.py --cfg_pth /mnt/d/xgait/ostdet/config/ostdet_2_class_config.yaml --ckpt_pth /mnt/d/xgait/ostdet/output/exp01/best.pth
+### Test
+Evaluation is performed according to the specified configuration file.  
+The following metrics are computed: Accuracy, Precision, Recall, and F1-score.  
+Evaluation can be conducted on either OAI or GNU, or on both datasets.
+```bash
+python test.py \
+  --cfg_pth /mnt/d/xgait/ostdet/config/ostdet_2_class_config.yaml \
+  --ckpt_pth /mnt/d/xgait/ostdet/output/exp01/best.pth
+```
