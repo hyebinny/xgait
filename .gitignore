@@ -15,3 +15,7 @@ labelImg
 # python cache
 __pycache__/
 *.pyc
+
+# only tracking images in 'asset' folder
+!asset/
+!asset/**/*.png
