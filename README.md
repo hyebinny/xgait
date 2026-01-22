@@ -21,7 +21,7 @@ xgait/
 * xgait model and train/test code
 * requirements.txt file
 
-## activate virtual environment
+## Activate virtual environment
 You can activate the preconfigured conda environment named `biohub`:
 ```bash
 conda activate biohub
