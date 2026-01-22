@@ -1,26 +1,26 @@
 {
   "gnu": {
     "021": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/021/xray/021.jpg",
+      "img_path": "dataset/GNU/021/xray/021.jpg",
       "orig_hw": [
         5416,
         1971
       ],
       "metrics": {
         "PelvicTilt_deg": -0.7742201649280623,
-        "HKA_L_deg": 177.32950862315465,
+        "HKA_L_deg": 177.33068164675458,
         "HKA_R_deg": 178.75809206643316,
         "mLDFA_L_deg": 91.75173868761821,
         "mLDFA_R_deg": 84.80165109721172,
-        "MPTA_L_deg": 94.77884500316515,
+        "MPTA_L_deg": 94.77711262772483,
         "MPTA_R_deg": 85.41271135513753,
-        "HKA_L_dev_deg": 2.670491376845348,
+        "HKA_L_dev_deg": 2.6693183532454157,
         "HKA_R_dev_deg": 1.2419079335668357,
         "HKA_L_severity": "Normal",
         "HKA_R_severity": "Normal",
         "mLDFA_L_dev_deg": 4.751738687618214,
         "mLDFA_R_dev_deg": 2.1983489027882825,
-        "MPTA_L_dev_deg": 7.778845003165145,
+        "MPTA_L_dev_deg": 7.777112627724833,
         "MPTA_R_dev_deg": 1.5872886448624683,
         "mLDFA_L_severity": "Mild",
         "mLDFA_R_severity": "Normal",
@@ -34,7 +34,7 @@
       }
     },
     "032": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/032/xray/032.jpg",
+      "img_path": "dataset/GNU/032/xray/032.jpg",
       "orig_hw": [
         8068,
         2846
@@ -67,7 +67,7 @@
       }
     },
     "036": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/036/xray/036.jpg",
+      "img_path": "dataset/GNU/036/xray/036.jpg",
       "orig_hw": [
         5023,
         1971
@@ -75,19 +75,19 @@
       "metrics": {
         "PelvicTilt_deg": 6.1460280130715415,
         "HKA_L_deg": 172.83666965204972,
-        "HKA_R_deg": 170.1567728528404,
+        "HKA_R_deg": 170.1671062372919,
         "mLDFA_L_deg": 95.83775745379788,
         "mLDFA_R_deg": 87.8682355907184,
         "MPTA_L_deg": 88.58986836124686,
-        "MPTA_R_deg": 98.81590792884784,
+        "MPTA_R_deg": 98.83685278699772,
         "HKA_L_dev_deg": 7.163330347950279,
-        "HKA_R_dev_deg": 9.84322714715961,
+        "HKA_R_dev_deg": 9.832893762708096,
         "HKA_L_severity": "Moderate",
         "HKA_R_severity": "Moderate",
         "mLDFA_L_dev_deg": 8.837757453797877,
         "mLDFA_R_dev_deg": 0.868235590718399,
         "MPTA_L_dev_deg": 1.5898683612468574,
-        "MPTA_R_dev_deg": 11.815907928847835,
+        "MPTA_R_dev_deg": 11.836852786997724,
         "mLDFA_L_severity": "Moderate",
         "mLDFA_R_severity": "Normal",
         "MPTA_L_severity": "Normal",
@@ -100,7 +100,7 @@
       }
     },
     "037": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/037/xray/037.jpg",
+      "img_path": "dataset/GNU/037/xray/037.jpg",
       "orig_hw": [
         5184,
         1975
@@ -108,17 +108,17 @@
       "metrics": {
         "PelvicTilt_deg": -2.805210050249869,
         "HKA_L_deg": 173.39942190508754,
-        "HKA_R_deg": 173.73828182295307,
+        "HKA_R_deg": 173.72730125693252,
         "mLDFA_L_deg": 96.07668417096525,
-        "mLDFA_R_deg": 86.11542438795313,
+        "mLDFA_R_deg": 86.11278351744862,
         "MPTA_L_deg": 90.40067206285701,
         "MPTA_R_deg": 82.0609620902446,
         "HKA_L_dev_deg": 6.600578094912464,
-        "HKA_R_dev_deg": 6.26171817704693,
+        "HKA_R_dev_deg": 6.27269874306748,
         "HKA_L_severity": "Moderate",
         "HKA_R_severity": "Moderate",
         "mLDFA_L_dev_deg": 9.076684170965251,
-        "mLDFA_R_dev_deg": 0.8845756120468735,
+        "mLDFA_R_dev_deg": 0.8872164825513806,
         "MPTA_L_dev_deg": 3.400672062857012,
         "MPTA_R_dev_deg": 4.939037909755399,
         "mLDFA_L_severity": "Moderate",
@@ -133,27 +133,27 @@
       }
     },
     "038": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/038/xray/038.jpg",
+      "img_path": "dataset/GNU/038/xray/038.jpg",
       "orig_hw": [
         7834,
         2852
       ],
       "metrics": {
         "PelvicTilt_deg": 0.8645588162435316,
-        "HKA_L_deg": 176.92393776979958,
-        "HKA_R_deg": 179.6767534570307,
+        "HKA_L_deg": 176.92419234544172,
+        "HKA_R_deg": 179.70260587188181,
         "mLDFA_L_deg": 90.00633088335395,
         "mLDFA_R_deg": 90.12213355838084,
-        "MPTA_L_deg": 93.36906368061139,
-        "MPTA_R_deg": 89.75865806042403,
-        "HKA_L_dev_deg": 3.076062230200421,
-        "HKA_R_dev_deg": 0.32324654296928657,
+        "MPTA_L_deg": 93.36883844309342,
+        "MPTA_R_deg": 89.7912670631486,
+        "HKA_L_dev_deg": 3.0758076545582753,
+        "HKA_R_dev_deg": 0.2973941281181851,
         "HKA_L_severity": "Mild",
         "HKA_R_severity": "Normal",
         "mLDFA_L_dev_deg": 3.0063308833539537,
         "mLDFA_R_dev_deg": 3.1221335583808383,
-        "MPTA_L_dev_deg": 6.36906368061139,
-        "MPTA_R_dev_deg": 2.7586580604240254,
+        "MPTA_L_dev_deg": 6.3688384430934235,
+        "MPTA_R_dev_deg": 2.791267063148595,
         "mLDFA_L_severity": "Mild",
         "mLDFA_R_severity": "Mild",
         "MPTA_L_severity": "Moderate",
@@ -166,7 +166,7 @@
       }
     },
     "041": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/041/xray/041.jpg",
+      "img_path": "dataset/GNU/041/xray/041.jpg",
       "orig_hw": [
         5611,
         1971
@@ -199,7 +199,7 @@
       }
     },
     "042": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/042/xray/042.jpg",
+      "img_path": "dataset/GNU/042/xray/042.jpg",
       "orig_hw": [
         5898,
         1966
@@ -232,26 +232,26 @@
       }
     },
     "043": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/043/xray/043.jpg",
+      "img_path": "dataset/GNU/043/xray/043.jpg",
       "orig_hw": [
         5297,
         1969
       ],
       "metrics": {
         "PelvicTilt_deg": 1.3048215257608096,
-        "HKA_L_deg": 177.12601152258628,
+        "HKA_L_deg": 177.12362859596087,
         "HKA_R_deg": 179.53902351884554,
         "mLDFA_L_deg": 90.56159190495772,
         "mLDFA_R_deg": 89.03903466406874,
-        "MPTA_L_deg": 93.77344655729178,
+        "MPTA_L_deg": 93.77633526389789,
         "MPTA_R_deg": 88.27279546039308,
-        "HKA_L_dev_deg": 2.873988477413718,
+        "HKA_L_dev_deg": 2.8763714040391335,
         "HKA_R_dev_deg": 0.46097648115446077,
         "HKA_L_severity": "Normal",
         "HKA_R_severity": "Normal",
         "mLDFA_L_dev_deg": 3.561591904957723,
         "mLDFA_R_dev_deg": 2.039034664068737,
-        "MPTA_L_dev_deg": 6.773446557291777,
+        "MPTA_L_dev_deg": 6.7763352638978915,
         "MPTA_R_dev_deg": 1.272795460393084,
         "mLDFA_L_severity": "Mild",
         "mLDFA_R_severity": "Normal",
@@ -265,7 +265,7 @@
       }
     },
     "044": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/044/xray/044.jpg",
+      "img_path": "dataset/GNU/044/xray/044.jpg",
       "orig_hw": [
         5567,
         1961
@@ -298,24 +298,24 @@
       }
     },
     "045": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/045/xray/045.jpg",
+      "img_path": "dataset/GNU/045/xray/045.jpg",
       "orig_hw": [
         5297,
         1978
       ],
       "metrics": {
         "PelvicTilt_deg": 0.3904856360942658,
-        "HKA_L_deg": 176.57057436369374,
+        "HKA_L_deg": 176.56897620354528,
         "HKA_R_deg": 177.98743830389816,
-        "mLDFA_L_deg": 94.67052964123228,
+        "mLDFA_L_deg": 94.67207770827652,
         "mLDFA_R_deg": 86.46794827958199,
         "MPTA_L_deg": 91.13468561868528,
         "MPTA_R_deg": 88.44425982040556,
-        "HKA_L_dev_deg": 3.429425636306263,
+        "HKA_L_dev_deg": 3.431023796454724,
         "HKA_R_dev_deg": 2.012561696101841,
         "HKA_L_severity": "Mild",
         "HKA_R_severity": "Normal",
-        "mLDFA_L_dev_deg": 7.670529641232278,
+        "mLDFA_L_dev_deg": 7.672077708276518,
         "mLDFA_R_dev_deg": 0.5320517204180106,
         "MPTA_L_dev_deg": 4.134685618685282,
         "MPTA_R_dev_deg": 1.4442598204055628,
@@ -331,7 +331,7 @@
       }
     },
     "046": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/046/xray/046.jpg",
+      "img_path": "dataset/GNU/046/xray/046.jpg",
       "orig_hw": [
         6757,
         1957
@@ -364,7 +364,7 @@
       }
     },
     "047": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/047/xray/047.jpg",
+      "img_path": "dataset/GNU/047/xray/047.jpg",
       "orig_hw": [
         6016,
         1968
@@ -376,7 +376,7 @@
         "mLDFA_L_deg": 92.88956344207209,
         "mLDFA_R_deg": 86.86335005262688,
         "MPTA_L_deg": 92.47620752836792,
-        "MPTA_R_deg": 87.82163833543653,
+        "MPTA_R_deg": 87.82131083112981,
         "HKA_L_dev_deg": 0.5322902695241396,
         "HKA_R_dev_deg": 1.0706405465354862,
         "HKA_L_severity": "Normal",
@@ -384,7 +384,7 @@
         "mLDFA_L_dev_deg": 5.889563442072088,
         "mLDFA_R_dev_deg": 0.1366499473731153,
         "MPTA_L_dev_deg": 5.476207528367922,
-        "MPTA_R_dev_deg": 0.821638335436532,
+        "MPTA_R_dev_deg": 0.8213108311298072,
         "mLDFA_L_severity": "Moderate",
         "mLDFA_R_severity": "Normal",
         "MPTA_L_severity": "Moderate",
@@ -397,7 +397,7 @@
       }
     },
     "048": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/048/xray/048.jpg",
+      "img_path": "dataset/GNU/048/xray/048.jpg",
       "orig_hw": [
         5493,
         1970
@@ -430,7 +430,7 @@
       }
     },
     "050": {
-      "img_path": "/mnt/d/hyebin/xgait/dataset/GNU/050/xray/050.jpg",
+      "img_path": "dataset/GNU/050/xray/050.jpg",
       "orig_hw": [
         5874,
         1973
