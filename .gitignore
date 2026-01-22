@@ -19,3 +19,5 @@ __pycache__/
 # only tracking images in 'asset' folder
 !asset/
 !asset/*.png
+
+!dataset/README.md
