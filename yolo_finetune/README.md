@@ -3,7 +3,6 @@
 ### Install and Launch LabelImg
 ```
 cd xgait
-git clone https://github.com/HumanSignal/labelImg.git
 python labelImg/labelImg.py
 ```
 
