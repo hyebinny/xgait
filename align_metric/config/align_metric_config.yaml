@@ -7,6 +7,8 @@ task:
   threshold: 0.5
 
 data:
+  dataset: ["gnu"]
+
   gnu:
     root: /mnt/d/hyebin/xgait/dataset/GNU
     split_json: /mnt/d/hyebin/xgait/dataset/GNU_json/GNU_split.json
@@ -29,3 +31,7 @@ test:
   save_pred: true
   out_pth: /mnt/d/hyebin/xgait/align_metric/output
   overlay_alpha: 0.35
+
+visualize:
+  thickness: 20
+  radius: 30

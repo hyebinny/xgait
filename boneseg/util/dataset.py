@@ -5,7 +5,7 @@ import cv2
 import torch
 from torch.utils.data import Dataset
 
-from util.util import preprocess_xray_gray, resize_img_and_masks, random_affine
+from .util import preprocess_xray_gray, resize_img_and_masks, random_affine
 
 def labelme_json_to_multimask(json_path: str, classes: list, H: int, W: int):
     # output: [C,H,W] uint8 0/1

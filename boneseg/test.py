@@ -56,7 +56,7 @@ def main(cfg_path: str, visualize: bool = False):
         if not os.path.exists(ckpt):
             ckpt = os.path.join(run["ckpt_dir"], "last.pth")
     load_ckpt(ckpt, model, map_location=device)
-
+    
     logger.info("======== Test Setup ========")
     logger.info(f"Config: {cfg_path}")
     logger.info(f"Run dir: {run['run_dir']}")
@@ -66,7 +66,7 @@ def main(cfg_path: str, visualize: bool = False):
     logger.info(f"Num class: {num_class} / class_names={classes}")
     logger.info(f"Threshold: {thr}")
     logger.info(f"Visualize: {visualize}")
-    logger.info("==================================")
+    logger.info("============================")
 
     save_pred = bool(cfg.get("test", {}).get("save_pred", True))
     pred_dir = cfg.get("test", {}).get("pred_dir", "")
@@ -126,8 +126,8 @@ def main(cfg_path: str, visualize: bool = False):
 
     iou_mean = (iou_sum / max(1, len(dl_te))).numpy()
     miou = float(iou_mean.mean())
-
-    logger.info("=== TEST IoU per class ===")
+    
+    logger.info("==== TEST IoU per class ====")
     for name, v in zip(classes, iou_mean):
         logger.info(f"{name}: {float(v):.4f}")
     logger.info(f"mIoU: {miou:.4f}")
