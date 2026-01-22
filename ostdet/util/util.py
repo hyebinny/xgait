@@ -28,23 +28,29 @@ def ensure_dir(path: str):
     Path(path).mkdir(parents=True, exist_ok=True)
 
 
-def setup_logger(out_dir: str, name: str = "train"):
+def setup_logger(out_dir: str, name="run", filename="log.txt"):
+    import logging
+    import os
+
     ensure_dir(out_dir)
-    log_path = os.path.join(out_dir, "log.txt")
 
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
+    logger.propagate = False
     logger.handlers.clear()
 
-    fmt = logging.Formatter("[%(asctime)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+    fmt = logging.Formatter(
+        "[%(asctime)s] %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"
+    )
+
+    fh = logging.FileHandler(os.path.join(out_dir, filename))
+    fh.setFormatter(fmt)
+    logger.addHandler(fh)
 
     sh = logging.StreamHandler()
     sh.setFormatter(fmt)
     logger.addHandler(sh)
-
-    fh = logging.FileHandler(log_path, mode="a")
-    fh.setFormatter(fmt)
-    logger.addHandler(fh)
 
     return logger
 

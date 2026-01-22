@@ -183,15 +183,7 @@ def main(cfg_pth: str, visualize: bool):
                 v = metrics.get(k, np.nan)
                 msg_parts.append(f"{k}={v:.2f}" if not np.isnan(v) else f"{k}=nan")
             log(f"{ds_name}/{sid}: " + " | ".join(msg_parts))
-
-            # save pred masks
-            if bool(cfg["test"].get("save_pred", False)):
-                np.savez_compressed(
-                    os.path.join(pred_dir, f"{ds_name}_{sid}.npz"),
-                    classes=np.array(classes),
-                    mask=pred_orig.astype(np.uint8),
-                )
-
+            
             # visualize: subject당 1장
             if visualize:
                 bgr = _safe_imread(img_path, gray=False)

@@ -34,7 +34,7 @@ def evaluate(model, loader, device, num_class):
 def main(cfg_path: str, ckpt_path: str):
     cfg = load_yaml(cfg_path)
     out_dir = cfg["train"]["out_dir"]
-    logger = setup_logger(out_dir, name="test")
+    logger = setup_logger(out_dir, name="test", filename="test_log.txt")
 
     device = torch.device(cfg["device"] if torch.cuda.is_available() else "cpu")
 

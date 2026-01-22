@@ -1,0 +1,62 @@
+seed: 42
+device: cuda
+
+task:
+  num_class: 2
+  class_names: ["normal", "anormal"]
+
+data:
+  img_size: 224
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std:  [0.229, 0.224, 0.225]
+
+  train:
+    gnu:
+      root: /mnt/d/xgait/dataset/GNU
+      align_json: /mnt/d/xgait/dataset/GNU_json/GNU_align.json
+      split_json: /mnt/d/xgait/dataset/GNU_json/GNU_split.json
+
+  test:
+    gnu:
+      root: /mnt/d/xgait/dataset/GNU
+      align_json: /mnt/d/xgait/dataset/GNU_json/GNU_align.json
+      split_json: /mnt/d/xgait/dataset/GNU_json/GNU_split.json
+
+
+train:
+  out_dir: /mnt/d/xgait/anomalydet/output/tri_all
+  epochs: 100
+  log_epoch: 5
+  eval_freq: 10
+  save_epoch: 50
+  num_workers: 4
+  fp16: true
+
+  batch_sampler:
+    enabled: true
+    n_class: 2
+    n_samples: 16
+  
+    # enabled: false
+    # batch_size: 32
+
+
+optim:
+  name: adamw
+  lr: 1.0e-4
+  weight_decay: 1.0e-4
+
+model:
+  backbone: vit_base_patch16_224
+  pretrained: true
+  embed_dim: 256
+
+loss:
+  use_ce: false
+  ce_weight: 1.0
+
+  use_triplet: true
+  triplet_weight: 1.0
+  triplet_margin: 0.3
+  triplet_mining: all # [hard, all]

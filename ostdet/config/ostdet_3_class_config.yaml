@@ -1,0 +1,75 @@
+seed: 42
+device: cuda
+
+task:
+  num_class: 3
+  class_names_2: ["negative", "positive"]
+  class_names_3: ["negative", "positive", "implant"]
+
+data:
+  img_size: 224
+  normalize:
+    mean: [0.5, 0.5, 0.5]
+    std:  [0.5, 0.5, 0.5]
+
+  train:
+    datasets: ["oai", "gnu"] # ["oai", "gnu"]
+
+    oai:
+      root: /mnt/d/xgait/dataset/OAI/train
+      implant_negative_json: /mnt/d/xgait/dataset/OAI_json/OAI_train_implant.json
+
+    gnu:
+      root: /mnt/d/xgait/dataset/GNU
+      ost_json: /mnt/d/xgait/dataset/GNU_ost.json
+      implant_negative_json: /mnt/d/xgait/dataset/GNU_json/GNU_train_implant.json
+      use_knee: true
+
+  test:
+    datasets: ["oai"] # ["oai", "gnu"]
+
+    oai:
+      root: /mnt/d/xgait/dataset/OAI/test
+      implant_negative_json: /mnt/d/xgait/dataset/OAI_json/OAI_test_implant.json
+
+    gnu:
+      root: /mnt/d/xgait/dataset/GNU
+      ost_json: /mnt/d/xgait/dataset/GNU_json/GNU_ost.json
+      implant_negative_json: /mnt/d/xgait/dataset/GNU_json/GNU_test_implant.json
+      use_knee: true
+
+train:
+  out_dir: /mnt/d/xgait/ostdet/output/ostdet_3_class
+  epochs: 200
+  log_epoch: 5
+  eval_freq: 10
+  save_epoch: 50
+  num_workers: 4
+  fp16: true
+
+  batch_sampler:
+    # enabled: true
+    # n_class: 3
+    # n_samples: 32
+
+    enabled: false
+    batch_size: 64
+
+optim:
+  name: adamw
+  lr: 1.0e-4
+  weight_decay: 1.0e-4
+
+model:
+  backbone: vit_base_patch16_224
+  pretrained: true
+  embed_dim: 256
+
+loss:
+  use_ce: true           # [true, false]
+  ce_weight: 1.0
+
+  use_triplet: false
+  triplet_weight: 1.0
+  triplet_margin: 0.2
+  triplet_mining: hard   # [all, hard]

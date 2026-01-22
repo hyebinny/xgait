@@ -56,7 +56,7 @@ def main(cfg_path: str):
     cfg = load_yaml(cfg_path)
     out_dir = cfg["train"]["out_dir"]
     ensure_dir(out_dir)
-    logger = setup_logger(out_dir, name="train")
+    logger = setup_logger(out_dir, name="train", filename="log.txt")
 
     set_seed(int(cfg["seed"]))
     device = torch.device(cfg["device"] if torch.cuda.is_available() else "cpu")

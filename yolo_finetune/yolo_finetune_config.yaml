@@ -1,0 +1,12 @@
+# Train/val/test sets
+path: /mnt/d/xgait/yolo_finetune/labelImg_data # dataset root dir
+train: images/train # train images (relative to 'path') 4 images
+val: images/test # optional
+test: images/test # test images (optional)
+
+# Classes
+names:
+  0: knee
+
+# Download script/URL (optional)
+download: https://github.com/ultralytics/assets/releases/download/v0.0.0/coco8.zip
