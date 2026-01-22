@@ -1,10 +1,18 @@
-# labelImg 사용법
+## Labeling Knee Regions in X-ray Images Using LabelImg
 
+### Install and Launch LabelImg
+```
+cd xgait
+git clone https://github.com/HumanSignal/labelImg.git
 cd labelImg
 pip install -r requirements/requirements-linux-python3.txt
 python labelImg.py
+```
 
-새로운 창이 뜨면 
+### Annotation Procedure
+After launching LabelImg, a new window will appear.
+Follow the steps below to annotate knee regions in X-ray images:
+1. Clock `Open Dir`
 'Open Dir'에서 라벨링할 이미지가 들어있는 폴더 선택: /mnt/d/xgait/yolo_finetune/labelImg_data/images/train
 'Change Save Dir'에서 라벨링 결과를 저장할 폴더 선택: /mnt/d/xgait/yolo_finetune/labelImg_data/labels/train
 'create recbox' 사용하여 bbox 만들기
@@ -12,8 +20,19 @@ python labelImg.py
 
 /mnt/d/xgait/yolo_finetune/labelImg_data/images/test, /mnt/d/xgait/yolo_finetune/labelImg_data/labels/test에 대해서도 다시 수행
 
+결과적으로 이미지와 라벨이 아래와 같은 구조로 저장됨.
+```
+ostdet
+├── images
+├──── train/003.jpg, ...
+├──── test/001.jpg, ...
+├── labels
+├──── train/003.txt, ...
+└──── test/001.txt, ...
+```
 
-yolo의 fine-tuning을 위해서는 coco8.yaml 안의 path, train, val 경로를 바꿔서 학습, test 이미지 변경 가능
+## YOLO Fine-tuning 
+yolo의 fine-tuning을 위해서는 `yolo_finetune_config.yaml` 안의 path, train, val 경로를 바꿔서 학습, test 이미지 변경 가능
 python train.py \
     --epochs 50 \
     --output_pth /mnt/d/xgait/yolo_finetune/output \
