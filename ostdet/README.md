@@ -13,7 +13,7 @@ The indices of implant samples labeled as negative are provided in:`dataset/[OAI
 Training is performed according to the specified configuration file.  
 Training can be conducted on either OAI or GNU, or on both datasets.
 ```bash
-python train.py --cfg_pth /mnt/d/xgait/ostdet/config/ostdet_2_class_config.yaml
+python ostdet/train.py --cfg_pth ostdet/config/ostdet_2_class_config.yaml
 ```
 
 ### Test
@@ -21,7 +21,7 @@ Evaluation is performed according to the specified configuration file.
 The following metrics are computed: Accuracy, Precision, Recall, and F1-score.  
 Evaluation can be conducted on either OAI or GNU, or on both datasets.
 ```bash
-python test.py \
-  --cfg_pth /mnt/d/xgait/ostdet/config/ostdet_2_class_config.yaml \
-  --ckpt_pth /mnt/d/xgait/ostdet/output/exp01/best.pth
+python ostdet/test.py \
+  --cfg_pth ostdet/config/ostdet_2_class_config.yaml \
+  --ckpt_pth ostdet/output/exp01/best.pth
 ```
