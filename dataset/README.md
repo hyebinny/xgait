@@ -5,6 +5,12 @@ OAI dataset download link:
 [https://www.kaggle.com/datasets/jeftaadriel/osteoarthritis-initiative-oai-dataset](https://www.kaggle.com/datasets/jeftaadriel/osteoarthritis-initiative-oai-dataset)
 
 ### OAI dataset
+
+| Split | # Subjects | Positive (Ost) | Negative (Ost) |
+|------:|-----------:|---------------:|---------------:|
+| Train | 6,604      | 2,791          | 3,813          |
+| Test  | 1,656      | 721            | 935            |
+
 ```
 dataset/OAI
 ├── train
@@ -21,6 +27,12 @@ dataset/OAI
 ```
 
 ### GNU dataset
+
+| Split | # Subjects | Positive (Ost) | Negative (Ost) | Normal (Align) | Abnormal (Align) |
+|------:|-----------:|---------------:|---------------:|---------------:|-----------------:|
+| Train | 34         | 0              | 34             | 18             | 16               |
+| Test  | 14         | 1              | 13             | 7              | 7                |
+
 ```
 dataset/GNU
 ├── 001                  # Left and right knee regions cropped from X-ray images using the fine-tuned YOLO model
@@ -41,6 +53,12 @@ dataset/GNU
 ```
 
 ### SNU dataset
+
+| Split | # Subjects | Positive (Ost) | Negative (Ost) | Normal (Align) | Abnormal (Align) |
+|------:|-----------:|---------------:|---------------:|---------------:|-----------------:|
+| Train | 21         | 10             | 11             | 11             | 10               |
+| Test  | 9          | 5              | 4              | 4              | 5                |
+
 ```
 dataset/SNU
 ├── 001
