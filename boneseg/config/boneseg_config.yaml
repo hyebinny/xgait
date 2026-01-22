@@ -1,0 +1,68 @@
+seed: 42
+device: cuda
+
+task:
+  classes: ["Tibia_L","Fibula_L","Femur_L","Pelvis","Femur_R","Tibia_R","Fibula_R"]
+  num_class: 7
+  threshold: 0.5
+
+data:
+  gnu:
+    root: /mnt/d/hyebin/xgait/dataset/GNU
+    split_json: /mnt/d/hyebin/xgait/dataset/GNU_json/GNU_split.json
+    train_key: TRAIN_SET
+    test_key: TEST_SET
+
+  input:
+    size: 512          # network input size (square)
+    to_grayscale: true # 1-channel
+    normalize: true    # /255
+
+  preprocess:
+    enable: true
+    mode: clahe_unsharp
+    clahe_clip: 2.0
+    clahe_grid: 8
+    unsharp_sigma: 1.0
+    unsharp_amount: 1.5
+
+  aug:
+    enable: true
+    hflip: true
+    brightness: 0.15   # +/- ratio
+    contrast: 0.15
+    rotate_deg: 10
+    translate: 0.03
+    scale_min: 0.95
+    scale_max: 1.05
+
+train:
+  out_dir: /mnt/d/hyebin/xgait/boneseg/output
+  exp_name: gnu_attnunet_512
+  epochs: 200
+  batch_size: 16
+  eval_freq: 50
+  save_epoch: 50
+  log_epoch: 5
+  num_workers: 4
+  fp16: true
+
+optim:
+  name: adamw
+  lr: 0.001
+  weight_decay: 0.0001
+  scheduler:
+    name: cosine
+    min_lr: 0.000001
+    warmup_epochs: 5
+
+loss:
+  bce_weight: 1.0
+  dice_weight: 1.0
+  smooth: 0.00001
+
+test:
+  ckpt: ""            # 비워두면 out_dir/exp_name/ckpt/best.pth 자동 사용
+  save_pred: true
+  pred_dir: ""        # 비워두면 out_dir/exp_name/preds 사용
+  overlay_alpha: 0.35

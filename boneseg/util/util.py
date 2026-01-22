@@ -7,6 +7,7 @@ import numpy as np
 import cv2
 import torch
 from datetime import datetime
+from typing import Optional, List, Tuple
 
 # -------------------------
 # config / seed / io
@@ -214,3 +215,58 @@ class Logger:
         print(line)
         with open(self.log_path, "a", encoding="utf-8") as f:
             f.write(line + "\n")
+
+
+def overlay_masks_on_bgr(
+    bgr: np.ndarray,
+    masks: np.ndarray,
+    alpha: float = 0.35,
+    colors: Optional[List[Tuple[int, int, int]]] = None,
+):
+    """
+    bgr: (H, W, 3) uint8
+    masks: (C, H, W) uint8/bool (0/1 or 0/255)
+    alpha: overlay weight (overlay = alpha, original = 1-alpha)
+    colors: list of BGR colors per class (optional)
+    """
+    if bgr is None:
+        raise ValueError("bgr is None")
+    if masks is None:
+        raise ValueError("masks is None")
+
+    if masks.dtype != np.uint8 and masks.dtype != np.bool_:
+        masks = masks.astype(np.uint8)
+
+    C, H, W = masks.shape
+    if bgr.shape[0] != H or bgr.shape[1] != W:
+        raise ValueError(f"Shape mismatch: bgr={bgr.shape}, masks={masks.shape}")
+
+    overlay = bgr.copy()
+
+    # 기본 팔레트 (BGR)
+    if colors is None:
+        colors = [
+            (255, 0, 0),     # blue
+            (0, 255, 0),     # green
+            (0, 0, 255),     # red
+            (255, 255, 0),   # cyan
+            (255, 0, 255),   # magenta
+            (0, 255, 255),   # yellow
+            (128, 128, 255), # light-red
+        ]
+
+    for c in range(C):
+        m = masks[c]
+        if m.dtype == np.bool_:
+            mask = m
+        else:
+            mask = m > 0
+
+        if not np.any(mask):
+            continue
+
+        color = colors[c % len(colors)]
+        overlay[mask] = color
+
+    vis = cv2.addWeighted(overlay, alpha, bgr, 1 - alpha, 0)
+    return vis
