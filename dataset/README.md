@@ -11,7 +11,7 @@ dataset/OAI
 ├── test
 ├── OAI_json
 ├──── OAI_split.json
-├──── OAI_implant_negative.json
+└──── OAI_implant_negative.json
 ```
 
 ### GNU dataset
@@ -26,7 +26,7 @@ dataset/GNU
 ...
 ├── GNU_json
 ├──── GNU_split.json
-├──── GNU_ost.json
+└──── GNU_ost.json
 ```
 
 ### SNU dataset
@@ -39,7 +39,7 @@ dataset/SNU
 ├──── dcm/001.dcm     # xray 이미지 원본 dcm 파일
 ├── 002
 ...
-├── SNU_json
+└── SNU_json
 ├──── SNU_split.json
 ├──── SNU_ost.json
 ```
