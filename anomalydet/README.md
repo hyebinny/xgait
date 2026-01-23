@@ -16,7 +16,7 @@ Evaluation is performed according to the specified configuration file.
 The following metrics are computed: Accuracy, Precision, Recall, and F1-score.  
 Evaluation can be conducted on either OAI or GNU, or on both datasets.
 ```bash
-python anomalydet/train.py \
+python anomalydet/test.py \
   --cfg_pth anomalydet/config/anomalydet_config.yaml \
   --ckpt_pth [ckpt_pth].pth
 ```

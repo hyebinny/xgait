@@ -26,10 +26,10 @@ data:
 
 train:
   out_dir: anomalydet/output/tri_all
-  epochs: 100
+  epochs: 10
   log_epoch: 5
-  eval_freq: 10
-  save_epoch: 50
+  eval_freq: 5
+  save_epoch: 1
   num_workers: 4
   fp16: true
 

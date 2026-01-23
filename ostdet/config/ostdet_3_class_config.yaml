@@ -52,7 +52,7 @@ train:
   batch_sampler:
     enabled: true
     n_class: 3
-    n_samples: 32
+    n_samples: 4
 
     # enabled: false
     # batch_size: 64

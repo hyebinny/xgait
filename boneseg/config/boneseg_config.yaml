@@ -39,10 +39,10 @@ data:
 train:
   out_dir: boneseg/output
   exp_name: gnu_attnunet_512
-  epochs: 200
+  epochs: 20
   batch_size: 1
-  eval_freq: 50
-  save_epoch: 50
+  eval_freq: 5
+  save_epoch: 5
   log_epoch: 1
   num_workers: 4
   fp16: true
