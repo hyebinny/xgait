@@ -20,3 +20,6 @@ __pycache__/
 # ignore dataset folder but README file
 dataset/*
 !dataset/README.md
+
+# track only this txt file
+!/requirements.txt
